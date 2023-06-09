@@ -10,4 +10,4 @@ To Think if the Generator can use Generics to do not copy-paste methods
 
 //Leftover homework
 Create/Generate XSD Schema with DOM or JAXB Parser??? (which one)
-Parse XML file using one of the parsers (DOM or JAXB Parser??? - probably two???)
+Parse XML file using one of the parsers (DOM or JAXB Parser??? - probably two???) JAXB - will be Unmrashaller?

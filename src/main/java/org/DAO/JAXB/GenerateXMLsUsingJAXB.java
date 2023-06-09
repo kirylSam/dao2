@@ -18,7 +18,7 @@ public class GenerateXMLsUsingJAXB {
 
     static Logger logger;
     static {
-        Logger logger = LogManager.getLogger("org.DAO.JAXB.GenerateXMLsUsingJAXB");
+        logger = LogManager.getLogger("org.DAO.JAXB.GenerateXMLsUsingJAXB");
     }
 
     public static void generateOneDoctorXML(int doctorId) {
