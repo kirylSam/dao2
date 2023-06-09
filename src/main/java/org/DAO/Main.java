@@ -6,6 +6,7 @@ import org.DAO.DAOLayer.interfaces.AdminPDAO;
 import org.DAO.DAOLayer.interfaces.DoctorDAO;
 import org.DAO.DAOLayer.DoctorDAOImpl;
 import org.DAO.DAOLayer.interfaces.NurseDAO;
+import org.DAO.JAXB.GenerateXMLsUsingJAXB;
 import org.DAO.ModelObjs.AdminP;
 import org.DAO.ModelObjs.Doctor;
 import org.DAO.ModelObjs.Nurse;
@@ -17,13 +18,23 @@ import java.util.List;
 
 public class Main {
     static Logger logger;
+    static {
+        logger = LogManager.getLogger("org.DAO.Main");
+    }
     public static void main(String[] args) {
         //Presentation layer
-        logger = LogManager.getLogger("org.DAO.Main");
+
         Main main = new Main();
-        main.doctorUsage();
+       /* main.doctorUsage();
         main.nursesUsage();
-        main.adminUsage();
+        main.adminUsage();*/
+        main.xmlJAXBGenerationUsage();
+
+    }
+
+    public void xmlJAXBGenerationUsage() {
+        GenerateXMLsUsingJAXB.generateOneDoctorXML(1);
+        GenerateXMLsUsingJAXB.generateAllDoctorsXML();
     }
 
     public void doctorUsage() {
@@ -87,7 +98,6 @@ public class Main {
             throw new RuntimeException(e);
         }*/
     }
-
 
     public void nursesUsage() {
         logger = LogManager.getLogger("org.DAO.Main");

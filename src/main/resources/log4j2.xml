@@ -15,5 +15,8 @@
         <Logger name="org.DAO.Main" level="info" additivity="false">
             <AppenderRef ref="Console" />
         </Logger>
+        <Logger name="org.DAO.JAXB.GenerateXMLsUsingJAXB" level="info" additivity="false">
+            <AppenderRef ref="Console" />
+        </Logger>
     </Loggers>
 </Configuration>

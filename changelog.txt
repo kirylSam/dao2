@@ -1,0 +1,13 @@
+09.06
+Created DAOLayers with a simple ConnectionFactory. ConnectionFactory uses HikariCP framework (Connection Pool)
+Added JAXB Annotations to Doctor and Doctors classes.
+Created a GenerateXMLsUsingJAXB that writes one doctor (by id) or all the doctors into an XML file
+Added log4j2 logger project-wide
+
+TODO - Add JAXB Annotations to the Nurse and AdminP Classes. Add those to the Generator Utility
+To Think if the Generator can use Generics to do not copy-paste methods
+
+
+//Leftover homework
+Create/Generate XSD Schema with DOM or JAXB Parser??? (which one)
+Parse XML file using one of the parsers (DOM or JAXB Parser??? - probably two???)

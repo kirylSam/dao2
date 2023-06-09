@@ -1,0 +1,72 @@
+package org.DAO.JAXB;
+
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import org.DAO.DAOLayer.DoctorDAOImpl;
+import org.DAO.DAOLayer.interfaces.DoctorDAO;
+import org.DAO.ModelObjs.Doctor;
+import org.DAO.ModelObjs.Doctors;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.io.File;
+import java.sql.SQLException;
+import java.util.List;
+
+public class GenerateXMLsUsingJAXB {
+
+    static Logger logger;
+    static {
+        Logger logger = LogManager.getLogger("org.DAO.JAXB.GenerateXMLsUsingJAXB");
+    }
+
+    public static void generateOneDoctorXML(int doctorId) {
+        DoctorDAO doctorDAO = new DoctorDAOImpl();
+
+        JAXBContext context = null;
+        Marshaller mar= null;
+
+        try {
+            Doctor doctor = doctorDAO.get(doctorId);
+            String fileName = "./doctor_" + doctor.getFirstName() + "_" + doctor.getLastName() + ".xml";
+
+            context = JAXBContext.newInstance(Doctor.class);
+            mar = context.createMarshaller();
+            mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            mar.marshal(doctor, new File(fileName));
+
+            logger.info("[JAXB XML Generator] Added a Doctor with id: " + doctorId + " to the file: " + fileName);
+        } catch (JAXBException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void generateAllDoctorsXML() {
+        DoctorDAO doctorDAO = new DoctorDAOImpl();
+
+        List<Doctor> doctorList = null;
+        Doctors doctors = new Doctors();
+
+        try {
+            doctorList = doctorDAO.getAll();
+            doctors.setDoctors(doctorList);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        JAXBContext context = null;
+        Marshaller mar= null;
+        try {
+            context = JAXBContext.newInstance(Doctors.class);
+            mar = context.createMarshaller();
+            mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            File file = new File("./doctors.xml");
+            mar.marshal(doctors, file);
+
+            logger.info("[JAXB XML Generator] Generated a list of all doctors.xml");
+        } catch (JAXBException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
