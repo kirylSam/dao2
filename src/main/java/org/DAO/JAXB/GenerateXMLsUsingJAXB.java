@@ -22,6 +22,8 @@ public class GenerateXMLsUsingJAXB {
     }
 
     public static void generateOneDoctorXML(int doctorId) {
+        /*** Obsolete. A generic method generateOneObjectXML(t) can be used instead */
+
         DoctorDAO doctorDAO = new DoctorDAOImpl();
 
         JAXBContext context = null;
@@ -67,6 +69,24 @@ public class GenerateXMLsUsingJAXB {
             logger.info("[JAXB XML Generator] Generated a list of all doctors.xml");
         } catch (JAXBException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public static <T> void generateOneObjectXML (T t) {
+        JAXBContext context = null;
+        Marshaller mar= null;
+
+        try {
+            String fileName =  "./generic_" + t.getClass().getSimpleName() + ".xml";
+
+            context = JAXBContext.newInstance(t.getClass());
+            mar = context.createMarshaller();
+            mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            mar.marshal(t, new File(fileName));
+
+            logger.info("[JAXB XML Generator] Added a " + t.getClass().getSimpleName() + " to the file: " + fileName);
+        } catch (JAXBException e) {
+            e.printStackTrace();
         }
     }
 }

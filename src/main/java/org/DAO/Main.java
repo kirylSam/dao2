@@ -28,13 +28,16 @@ public class Main {
        /* main.doctorUsage();
         main.nursesUsage();
         main.adminUsage();*/
-        main.xmlJAXBGenerationUsage();
+       // main.xmlJAXBGenerationUsage();
 
     }
 
     public void xmlJAXBGenerationUsage() {
         GenerateXMLsUsingJAXB.generateOneDoctorXML(1);
         GenerateXMLsUsingJAXB.generateAllDoctorsXML();
+
+        Nurse nurse = new Nurse(7, "GenerciNurse", "GenericNurseLast", 1000, 2, 2);
+        GenerateXMLsUsingJAXB.generateOneObjectXML(nurse);
     }
 
     public void doctorUsage() {
