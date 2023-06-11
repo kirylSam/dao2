@@ -6,8 +6,10 @@ import org.DAO.DAOLayer.interfaces.AdminPDAO;
 import org.DAO.DAOLayer.interfaces.DoctorDAO;
 import org.DAO.DAOLayer.DoctorDAOImpl;
 import org.DAO.DAOLayer.interfaces.NurseDAO;
+import org.DAO.JAXB.GenerateObjFromXMLUsingJAXB;
 import org.DAO.JAXB.GenerateXMLsUsingJAXB;
 import org.DAO.ModelObjs.AdminP;
+import org.DAO.ModelObjs.AdminPs;
 import org.DAO.ModelObjs.Doctor;
 import org.DAO.ModelObjs.Nurse;
 import org.apache.logging.log4j.LogManager;
@@ -28,16 +30,26 @@ public class Main {
        /* main.doctorUsage();
         main.nursesUsage();
         main.adminUsage();*/
-       // main.xmlJAXBGenerationUsage();
-
+        //main.xmlJAXBGenerationUsage();
+        main.XMLtoOBJUsage();
     }
 
     public void xmlJAXBGenerationUsage() {
         GenerateXMLsUsingJAXB.generateOneDoctorXML(1);
-        GenerateXMLsUsingJAXB.generateAllDoctorsXML();
+        /*GenerateXMLsUsingJAXB.generateAllDoctorsXML();
 
         Nurse nurse = new Nurse(7, "GenerciNurse", "GenericNurseLast", 1000, 2, 2);
-        GenerateXMLsUsingJAXB.generateOneObjectXML(nurse);
+        GenerateXMLsUsingJAXB.generateOneObjectXML(nurse);*/
+
+       /* AdminP adminP = new AdminP(1, "AdminP", "AdminP", 1000, 2, 2);
+        GenerateXMLsUsingJAXB.generateOneObjectXML(adminP);*/
+    }
+
+    public void XMLtoOBJUsage() {
+        /*Doctor doctor = GenerateObjFromXMLUsingJAXB.unmarshal("doctor_SurgeonName_SurgeonSurname", Doctor.class);
+        logger.info(doctor);*/
+        AdminP adminP = GenerateObjFromXMLUsingJAXB.unmarshal("generic_AdminP", AdminP.class);
+        logger.info(adminP);
     }
 
     public void doctorUsage() {

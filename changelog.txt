@@ -6,13 +6,13 @@ Added log4j2 logger project-wide
 
 10.06
 Added JAXB Annotations to Nurse/Nurses.
-Added a Generic method that accepts ModelOBJ and creates an xml out of it
+Added a Generic method that accepts ModelOBJ and creates a xml out of it
 
-
-TODO - Add JAXB Annotations to the Nurse and AdminP Classes. Add those to the Generator Utility
-To Think if the Generator can use Generics to do not copy-paste methods
-
+11.06
+Finished with JAXB Annotations for AdminP/AdminPs
+Added Generic GenerateObjFromXMLUsingJAXB Unmarshaller (accepts fileName and obj class - returns object of that class)
 
 //Leftover homework
-Create/Generate XSD Schema with DOM or JAXB Parser??? (which one)
-Parse XML file using one of the parsers (DOM or JAXB Parser??? - probably two???) JAXB - will be Unmrashaller?
+Create/Generate XSD Schema. Add parser with DOM
+
+//TODO Add to the GenerateXMLsUsingJAXB - method to extract all Nurses and AdminPs

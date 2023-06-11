@@ -1,5 +1,12 @@
 package org.DAO.ModelObjs;
 
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
+
+@XmlRootElement(name = "doctor")
+@XmlType(propOrder = { "adminPersonelId", "firstName", "lastName", "salary", "departmentId", "roleId" })
 public class AdminP {
     //Data transfer object - only storage and retrieval (no business logic whatsoever)
     //model object
@@ -43,7 +50,8 @@ public class AdminP {
                 '}';
     }
 
-    public int getAdminPersonelIdId() {
+    @XmlAttribute(name = "admin_personel_id")
+    public int getAdminPersonelId() {
         return adminPersonelId;
     }
 
@@ -51,6 +59,7 @@ public class AdminP {
         this.adminPersonelId = adminPersonelId;
     }
 
+    @XmlElement(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
@@ -59,6 +68,7 @@ public class AdminP {
         this.firstName = firstName;
     }
 
+    @XmlElement(name = "last_name")
     public String getLastName() {
         return lastName;
     }
@@ -67,6 +77,7 @@ public class AdminP {
         this.lastName = lastName;
     }
 
+    @XmlElement(name = "salary")
     public int getSalary() {
         return salary;
     }
@@ -83,6 +94,7 @@ public class AdminP {
         this.departmentId = departmentId;
     }
 
+    @XmlElement(name = "role_id")
     public int getRoleId() {
         return roleId;
     }

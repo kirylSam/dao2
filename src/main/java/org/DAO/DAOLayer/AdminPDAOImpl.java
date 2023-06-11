@@ -124,7 +124,7 @@ public class AdminPDAOImpl implements AdminPDAO {
         ps.setInt(3, adminP.getSalary());
         ps.setInt(4, adminP.getDepartmentId());
         ps.setInt(5, adminP.getRoleId());
-        ps.setInt(6, adminP.getAdminPersonelIdId());
+        ps.setInt(6, adminP.getAdminPersonelId());
 
         int result = ps.executeUpdate();
 
@@ -143,7 +143,7 @@ public class AdminPDAOImpl implements AdminPDAO {
 
         PreparedStatement ps = con.prepareStatement(sql);
 
-        ps.setInt(1, adminP.getAdminPersonelIdId());
+        ps.setInt(1, adminP.getAdminPersonelId());
 
         int result = ps.executeUpdate();
 
