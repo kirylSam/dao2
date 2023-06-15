@@ -8,8 +8,9 @@ import org.DAO.DAOLayer.DoctorDAOImpl;
 import org.DAO.DAOLayer.interfaces.NurseDAO;
 import org.DAO.JAXB.GenerateObjFromXMLUsingJAXB;
 import org.DAO.JAXB.GenerateXMLsUsingJAXB;
+import org.DAO.JAXB.JAXBValidation;
+import org.DAO.JAXB.SchemaGenerator;
 import org.DAO.ModelObjs.AdminP;
-import org.DAO.ModelObjs.AdminPs;
 import org.DAO.ModelObjs.Doctor;
 import org.DAO.ModelObjs.Nurse;
 import org.apache.logging.log4j.LogManager;
@@ -31,7 +32,9 @@ public class Main {
         //main.nursesUsage();
        // main.adminUsage();
        // main.xmlJAXBGenerationUsage();
-       main.XMLtoOBJUsage();
+       //main.XMLtoOBJUsage();
+        logger.info(new JAXBValidation().isValid("schema1.xsd", "doctor.xml"));
+        //SchemaGenerator.generateSchema(Doctor.class, "doctor.xsd");
     }
 
     public void xmlJAXBGenerationUsage() {

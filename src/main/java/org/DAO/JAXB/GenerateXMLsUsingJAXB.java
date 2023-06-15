@@ -1,8 +1,5 @@
 package org.DAO.JAXB;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
 import org.DAO.DAOLayer.DoctorDAOImpl;
 import org.DAO.DAOLayer.interfaces.DoctorDAO;
 import org.DAO.ModelObjs.Doctor;
@@ -10,6 +7,9 @@ import org.DAO.ModelObjs.Doctors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import java.io.File;
 import java.sql.SQLException;
 import java.util.List;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<doctor doctor_id="1">
+    <first_name>SurgeonName</first_name>
+    <last_name>SurgeonSurname</last_name>
+    <salary>10000</salary>
+    <department_id>1</department_id>
+    <specialization_id>1</specialization_id>
+</doctor>
