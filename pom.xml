@@ -42,5 +42,63 @@
             <artifactId>jaxb2-maven-plugin</artifactId>
             <version>3.1.0</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.4.0-b180830.0359</version>
+        </dependency>
+
     </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.5.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>schemagen</id>
+                        <goals>
+                            <goal>schemagen</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <transformSchemas>
+                        <transformSchema>
+                            <uri>https://www.example.org/doctor</uri>
+                            <toPrefix>dctrs</toPrefix>
+                            <toFile>doctor.xsd</toFile>
+                        </transformSchema>
+                        <transformSchema>
+                            <uri>https://www.example.org/nurse</uri>
+                            <toPrefix>nrss</toPrefix>
+                            <toFile>nurse.xsd</toFile>
+                        </transformSchema>
+                        <transformSchema>
+                            <uri>https://www.example.org/adminp</uri>
+                            <toPrefix>admps</toPrefix>
+                            <toFile>adminp.xsd</toFile>
+                        </transformSchema>
+                    </transformSchemas>
+                    <verbose>true</verbose>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

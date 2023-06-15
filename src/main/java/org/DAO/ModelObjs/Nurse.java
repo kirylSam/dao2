@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "nurse")
-@XmlType(propOrder = { "nurseId", "firstName", "lastName", "nurseSalary", "departmentId", "specializationId" })
+@XmlType(propOrder = { "nurseId", "firstName", "lastName", "nurseSalary", "departmentId", "specializationId" }, namespace = "https://www.example.org/nurse")
 public class Nurse {
     //Data transfer object - only storage and retrieval (no business logic whatsoever)
     //model object

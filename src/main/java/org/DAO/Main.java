@@ -27,27 +27,27 @@ public class Main {
         //Presentation layer
 
         Main main = new Main();
-       /* main.doctorUsage();
-        main.nursesUsage();
-        main.adminUsage();*/
-        //main.xmlJAXBGenerationUsage();
-        main.XMLtoOBJUsage();
+      // main.doctorUsage();
+        //main.nursesUsage();
+       // main.adminUsage();
+       // main.xmlJAXBGenerationUsage();
+       main.XMLtoOBJUsage();
     }
 
     public void xmlJAXBGenerationUsage() {
         GenerateXMLsUsingJAXB.generateOneDoctorXML(1);
-        /*GenerateXMLsUsingJAXB.generateAllDoctorsXML();
+        GenerateXMLsUsingJAXB.generateAllDoctorsXML();
 
         Nurse nurse = new Nurse(7, "GenerciNurse", "GenericNurseLast", 1000, 2, 2);
-        GenerateXMLsUsingJAXB.generateOneObjectXML(nurse);*/
+        GenerateXMLsUsingJAXB.generateOneObjectXML(nurse);
 
-       /* AdminP adminP = new AdminP(1, "AdminP", "AdminP", 1000, 2, 2);
-        GenerateXMLsUsingJAXB.generateOneObjectXML(adminP);*/
+        AdminP adminP = new AdminP(1, "AdminP", "AdminP", 1000, 2, 2);
+        GenerateXMLsUsingJAXB.generateOneObjectXML(adminP);
     }
 
     public void XMLtoOBJUsage() {
-        /*Doctor doctor = GenerateObjFromXMLUsingJAXB.unmarshal("doctor_SurgeonName_SurgeonSurname", Doctor.class);
-        logger.info(doctor);*/
+        Doctor doctor = GenerateObjFromXMLUsingJAXB.unmarshal("doctor_SurgeonName_SurgeonSurname", Doctor.class);
+        logger.info(doctor);
         AdminP adminP = GenerateObjFromXMLUsingJAXB.unmarshal("generic_AdminP", AdminP.class);
         logger.info(adminP);
     }
@@ -64,7 +64,7 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-       /* //Create - insert
+     /*   //Create - insert
          Doctor doctor = new Doctor("FirstDao", "LastDao", 1, 1, 1);
         try {
             int result = doctorDAO.insert(doctor);
@@ -90,7 +90,7 @@ public class Main {
             System.out.println(result);
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
+        }*/
 
         //Get all
         try {
@@ -103,7 +103,7 @@ public class Main {
             throw new RuntimeException(e);
         }
 
-        //Get All with Specific Last Name
+        /*//Get All with Specific Last Name
         try {
             List<Doctor> doctorList = doctorDAO.getAllWithLastName("LabGuySurname");
             for (Doctor doctor: doctorList) {

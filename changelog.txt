@@ -12,7 +12,9 @@ Added a Generic method that accepts ModelOBJ and creates a xml out of it
 Finished with JAXB Annotations for AdminP/AdminPs
 Added Generic GenerateObjFromXMLUsingJAXB Unmarshaller (accepts fileName and obj class - returns object of that class)
 
-//Leftover homework
-Create/Generate XSD Schema. Add parser with DOM
+15.06
+Added JAXB XSD schemagen. Can be used with mvn clean install. Generates XSD Schema from java classes
+
+//Leftover homework. Add parser with DOM. Add extended parses for date and lists
 
 //TODO Add to the GenerateXMLsUsingJAXB - method to extract all Nurses and AdminPs
