@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<doctors>
+    <doctor doctor_id="1">
+        <first_name>SurgeonName</first_name>
+        <last_name>SurgeonSurname</last_name>
+        <salary>10000</salary>
+        <department_id>1</department_id>
+        <specialization_id>1</specialization_id>
+    </doctor>
+    <doctor doctor_id="2">
+        <first_name>LabGuy</first_name>
+        <last_name>LabGuySurname</last_name>
+        <salary>1000</salary>
+        <department_id>5</department_id>
+        <specialization_id>5</specialization_id>
+    </doctor>
+    <doctor doctor_id="3">
+        <first_name>Dermatolog</first_name>
+        <last_name>DermatologSurname</last_name>
+        <salary>1200</salary>
+        <department_id>4</department_id>
+        <specialization_id>4</specialization_id>
+    </doctor>
+    <doctor doctor_id="4">
+        <first_name>Cardio</first_name>
+        <last_name>CardioSurname</last_name>
+        <salary>9000</salary>
+        <department_id>2</department_id>
+        <specialization_id>2</specialization_id>
+    </doctor>
+    <doctor doctor_id="5">
+        <first_name>Cardio2</first_name>
+        <last_name>Cardio2</last_name>
+        <salary>10000</salary>
+        <department_id>2</department_id>
+        <specialization_id>2</specialization_id>
+    </doctor>
+    <doctor doctor_id="6">
+        <first_name>Therapeuta</first_name>
+        <last_name>Internista</last_name>
+        <salary>10000</salary>
+        <department_id>3</department_id>
+        <specialization_id>4</specialization_id>
+    </doctor>
+    <doctor doctor_id="7">
+        <first_name>LabGuy2</first_name>
+        <last_name>LabGuySurname</last_name>
+        <salary>100000</salary>
+        <department_id>5</department_id>
+        <specialization_id>5</specialization_id>
+    </doctor>
+    <doctor doctor_id="14">
+        <first_name>Cox</first_name>
+        <last_name>Perry</last_name>
+        <salary>10100</salary>
+        <department_id>5</department_id>
+        <specialization_id>5</specialization_id>
+    </doctor>
+</doctors>
