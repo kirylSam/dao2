@@ -23,5 +23,10 @@ Added Jackson Parsers - ConvertJSONToObject and ConvertObjectToJSON
 ConvertJSONToObject is using Generics so that any annotated class can be converted into an object (can read JSON strings too)
 ConvertObjectToJSON also is using Generics. Can convert any individual object and List<Object> to a json / json array
 
-//Leftover homework: Add extended parses for date and lists
+21.06
+Created new branch - batis, where all the JACKSON and JAXB Annotations are removed. Cleaned up the whole project
+removed unnecessary (for this task) files.
+Added AdminPMyBatisMapper
+
+//TO DO delete and getAll methods
 

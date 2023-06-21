@@ -12,13 +12,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NurseDAOImpl implements NurseDAO {
-    //DAO Layer
-
-    //this class will be instantiated when we want to persist info in our db
-
-    //CRUD - Retrieve
-    @Override
+public class NurseDAOImpl  {
+  /*  @Override
     public Nurse get(int tId) throws SQLException {
         Connection con = ConnectionFactory.getConnection();
         Nurse nurse = null;
@@ -186,5 +181,5 @@ public class NurseDAOImpl implements NurseDAO {
         ConnectionFactory.closeConnection(con);
 
         return nurses;
-    }
+    }*/
 }

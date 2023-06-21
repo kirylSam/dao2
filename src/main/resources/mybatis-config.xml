@@ -1,0 +1,27 @@
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Confi 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <typeAliases>
+        <typeAlias alias = "AdminP" type = "org.DAO.ModelObjs.AdminP"/>
+        <typeAlias alias = "Doctor" type = "org.DAO.ModelObjs.Doctor"/>
+        <typeAlias alias = "Nurse" type = "org.DAO.ModelObjs.Nurse"/>
+    </typeAliases>
+
+    <environments default = "mysql">
+        <environment id = "mysql">
+            <transactionManager type = "JDBC"/>
+            <dataSource type = "POOLED">
+                <property name = "driver" value = "com.mysql.cj.jdbc.Driver"/>
+                <property name = "url" value = "jdbc:mysql://localhost:3306/mydb"/>
+                <property name = "username" value = "root"/>
+                <property name = "password" value = "root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="AdminPMyBatisMapper.xml"/>
+    </mappers>
+
+</configuration>

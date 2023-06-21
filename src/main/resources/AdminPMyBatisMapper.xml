@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "org.DAO.DAOLayer.interfaces.AdminPMyBatisMapper">
+    <select id = "get" parameterType="Integer" resultType = "AdminP">
+        SELECT admin_personel_id as adminPersonelId,
+        first_name as firstName,
+        last_name as lastName,
+        salary as salary,
+        department_id as departmentId,
+        role_id as roleId
+        FROM admin_personel
+        WHERE admin_personel_id = #{adminPID}
+    </select>
+
+    <select id = "getAll" resultType = "AdminP">
+        SELECT * FROM admin_personel
+    </select>
+
+    <insert id = "insert" parameterType="AdminP" keyProperty="adminPersonelId" useGeneratedKeys="true">
+        INSERT INTO admin_personel (first_name, last_name, salary, role_id, department_id)
+        VALUES (#{firstName}, #{lastName}, #{salary}, #{roleId}, #{departmentId})
+    </insert>
+
+    <update id = "update" parameterType="AdminP" keyProperty="adminPersonelId" useGeneratedKeys="true">
+        UPDATE admin_personel SET first_name = #{firstName},
+        last_name = #{lastName},
+        salary = #{salary},
+        department_id = #{departmentId},
+        role_id = #{roleId}
+        WHERE admin_personel_id = #{adminPersonelId};
+    </update>
+</mapper>

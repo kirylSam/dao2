@@ -1,10 +1,7 @@
 package org.DAO.ModelObjs;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 
 import java.util.List;
 
@@ -12,7 +9,6 @@ import java.util.List;
 public class Nurses {
     private List<Nurse> nurses;
 
-    @JsonGetter
     public List<Nurse> getNurses() {
         return nurses;
     }

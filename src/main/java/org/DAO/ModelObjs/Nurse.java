@@ -1,7 +1,5 @@
 package org.DAO.ModelObjs;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonRootName;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
@@ -9,7 +7,6 @@ import jakarta.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "nurse")
 @XmlType(propOrder = { "nurseId", "firstName", "lastName", "nurseSalary", "departmentId", "specializationId" }, namespace = "https://www.example.org/nurse")
-@JsonRootName(value = "nurse")
 public class Nurse {
     //Data transfer object - only storage and retrieval (no business logic whatsoever)
     //model object
@@ -54,7 +51,6 @@ public class Nurse {
     }
 
     @XmlAttribute(name = "nurse_id")
-    @JsonGetter
     public int getNurseId() {
         return nurseId;
     }
@@ -64,7 +60,6 @@ public class Nurse {
     }
 
     @XmlElement(name = "first_name")
-    @JsonGetter
     public String getFirstName() {
         return firstName;
     }
@@ -74,7 +69,6 @@ public class Nurse {
     }
 
     @XmlElement(name = "last_name")
-    @JsonGetter
     public String getLastName() {
         return lastName;
     }
@@ -84,7 +78,6 @@ public class Nurse {
     }
 
     @XmlElement(name = "nurse_salary")
-    @JsonGetter
     public int getNurseSalary() {
         return nurse_salary;
     }
@@ -94,7 +87,6 @@ public class Nurse {
     }
 
     @XmlElement(name = "department_id")
-    @JsonGetter
     public int getDepartmentId() {
         return departmentId;
     }
@@ -104,7 +96,6 @@ public class Nurse {
     }
 
     @XmlElement(name = "specialization_id")
-    @JsonGetter
     public int getSpecializationId() {
         return specializationId;
     }

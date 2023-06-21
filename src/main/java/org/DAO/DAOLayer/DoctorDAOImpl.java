@@ -11,13 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoctorDAOImpl implements DoctorDAO {
-    //DAO Layer
-
-    //this class will be instantiated when we want to persist info in our db
-
-    //CRUD - Retrieve
-    @Override
+public class DoctorDAOImpl  {
+   /* @Override
     public Doctor get(int tId) throws SQLException {
         Connection con = ConnectionFactory.getConnection();
         Doctor doctor = null;
@@ -185,5 +180,5 @@ public class DoctorDAOImpl implements DoctorDAO {
         ConnectionFactory.closeConnection(con);
 
         return doctors;
-    }
+    }*/
 }
