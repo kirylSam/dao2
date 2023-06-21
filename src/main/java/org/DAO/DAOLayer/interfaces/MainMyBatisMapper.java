@@ -15,5 +15,5 @@ public interface MainMyBatisMapper <T> {
 
     void update (T t) throws SQLException;
 
-    int delete (T t) throws SQLException;
+    void delete (T t) throws SQLException;
 }

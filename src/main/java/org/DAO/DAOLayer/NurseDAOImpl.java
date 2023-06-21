@@ -1,17 +1,5 @@
 package org.DAO.DAOLayer;
 
-import org.DAO.Connection.ConnectionFactory;
-import org.DAO.DAOLayer.interfaces.NurseDAO;
-import org.DAO.DAOLayer.interfaces.NurseDAO;
-import org.DAO.ModelObjs.Nurse;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 public class NurseDAOImpl  {
   /*  @Override
     public Nurse get(int tId) throws SQLException {

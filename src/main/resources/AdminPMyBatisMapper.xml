@@ -14,7 +14,13 @@
     </select>
 
     <select id = "getAll" resultType = "AdminP">
-        SELECT * FROM admin_personel
+        SELECT admin_personel_id as adminPersonelId,
+        first_name as firstName,
+        last_name as lastName,
+        salary as salary,
+        department_id as departmentId,
+        role_id as roleId
+        FROM admin_personel
     </select>
 
     <insert id = "insert" parameterType="AdminP" keyProperty="adminPersonelId" useGeneratedKeys="true">
@@ -30,4 +36,8 @@
         role_id = #{roleId}
         WHERE admin_personel_id = #{adminPersonelId};
     </update>
+
+    <delete id = "delete" parameterType="AdminP">
+        DELETE FROM admin_personel WHERE admin_personel_id = #{adminPersonelId};
+    </delete>
 </mapper>

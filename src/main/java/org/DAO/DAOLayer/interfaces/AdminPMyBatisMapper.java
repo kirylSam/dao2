@@ -14,5 +14,5 @@ public interface AdminPMyBatisMapper extends MainMyBatisMapper<AdminP> {
 
     void update (AdminP adminPID) throws SQLException;
 
-    int delete (AdminP adminPID) throws SQLException;
+    void delete (AdminP adminPID) throws SQLException;
 }

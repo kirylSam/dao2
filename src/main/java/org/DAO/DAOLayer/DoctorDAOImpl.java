@@ -1,16 +1,5 @@
 package org.DAO.DAOLayer;
 
-import org.DAO.Connection.ConnectionFactory;
-import org.DAO.DAOLayer.interfaces.DoctorDAO;
-import org.DAO.ModelObjs.Doctor;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 public class DoctorDAOImpl  {
    /* @Override
     public Doctor get(int tId) throws SQLException {

@@ -26,7 +26,5 @@ ConvertObjectToJSON also is using Generics. Can convert any individual object an
 21.06
 Created new branch - batis, where all the JACKSON and JAXB Annotations are removed. Cleaned up the whole project
 removed unnecessary (for this task) files.
-Added AdminPMyBatisMapper
-
-//TO DO delete and getAll methods
+Added AdminPMyBatisMapper and all method. Fixed service classes
 
