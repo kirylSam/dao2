@@ -22,6 +22,8 @@
 
     <mappers>
         <mapper resource="AdminPMyBatisMapper.xml"/>
+        <mapper resource="NurseMyBatisMapper.xml"/>
+        <mapper resource="DoctorMyBatisMapper.xml"/>
     </mappers>
 
 </configuration>

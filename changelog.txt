@@ -28,3 +28,6 @@ Created new branch - batis, where all the JACKSON and JAXB Annotations are remov
 removed unnecessary (for this task) files.
 Added AdminPMyBatisMapper and all method. Fixed service classes
 
+22.06
+Converted everything MyBatis. Added MyBatis to the Nurse and Doctor
+

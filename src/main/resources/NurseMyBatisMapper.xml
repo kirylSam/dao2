@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "org.DAO.DAOLayer.interfaces.NurseMyBatisMapper">
+    <select id = "get" parameterType="Integer" resultType = "Nurse">
+        SELECT nurse_id as nurseId,
+        first_name as firstName,
+        last_name as lastName,
+        nurse_salary as nurse_salary,
+        department_id as departmentId,
+        specialization_id as specializationId
+        FROM nurses
+        WHERE nurse_id = #{nurseId}
+    </select>
+
+    <select id = "getAll" resultType = "Nurse">
+        SELECT nurse_id as nurseId,
+        first_name as firstName,
+        last_name as lastName,
+        nurse_salary as nurse_salary,
+        department_id as departmentId,
+        specialization_id as specializationId
+        FROM nurses
+    </select>
+
+    <insert id = "insert" parameterType="Nurse" keyProperty="nurseId" useGeneratedKeys="true">
+        INSERT INTO nurses (first_name, last_name, nurse_salary, specialization_id, department_id)
+        VALUES (#{firstName}, #{lastName}, #{nurse_salary}, #{specializationId}, #{departmentId})
+    </insert>
+
+    <update id = "update" parameterType="Nurse" keyProperty="nurseId" useGeneratedKeys="true">
+        UPDATE nurses SET first_name = #{firstName},
+        last_name = #{lastName},
+        nurse_salary = #{nurse_salary},
+        department_id = #{departmentId},
+        specialization_id = #{specializationId}
+        WHERE nurse_id = #{nurseId};
+    </update>
+
+    <delete id = "delete" parameterType="Nurse">
+        DELETE FROM nurses WHERE nurse_id = #{nurseId};
+    </delete>
+</mapper>
