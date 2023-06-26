@@ -1,10 +1,16 @@
 package org.DAO;
 
+import com.sun.istack.Pool;
 import org.DAO.DAOLayer.AdminPMyBatisImpl;
 import org.DAO.DAOLayer.DoctorMyBatisImpl;
+import org.DAO.DAOLayer.Factory.ImplFactory;
 import org.DAO.DAOLayer.NurseMyBatisImpl;
 import org.DAO.ModelObjs.AdminP;
+import org.DAO.ModelObjs.Builder.DoctorBuilder;
 import org.DAO.ModelObjs.Doctor;
+import org.DAO.ModelObjs.MVC.DoctorController;
+import org.DAO.ModelObjs.MVC.DoctorModel;
+import org.DAO.ModelObjs.MVC.DoctorView;
 import org.DAO.ModelObjs.Nurse;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -28,8 +34,9 @@ public class Main {
 
     public static void main(String[] args) {
         //adminUsage();
-        //doctorUsage();
-        nurseUsage();
+       // doctorUsage();
+        doctorMVCUsage();
+        //nurseUsage();
 
     }
 
@@ -65,9 +72,9 @@ public class Main {
             logger.info("Update one AdminP: " + updateAdminP);
 
             //Delete
-           /* AdminP deleteadminP = new AdminP(14, "Batis3", "Batis32", 100000, 6, 1);
+            AdminP deleteadminP = new AdminP(9, "Batis3", "Batis32", 100000, 6, 1);
             adminPMyBatis.delete(deleteadminP);
-            logger.info("Delete one AdminP: " + deleteadminP);*/
+            logger.info("Delete one AdminP: " + deleteadminP);
         } catch (IOException | SQLException e) {
             throw new RuntimeException(e);
         }
@@ -81,14 +88,25 @@ public class Main {
             //Open session
             SqlSession sqlSession = sqlSessionFactory.openSession();
 
-            DoctorMyBatisImpl doctorMyBatis = new DoctorMyBatisImpl(sqlSession);
+            //Factory
+            ImplFactory factory = new ImplFactory();
+            DoctorMyBatisImpl doctorMyBatis = (DoctorMyBatisImpl) factory.createMyBatisImpl("Doctor", sqlSession);
 
             //Get
             Doctor returnedByBatis = doctorMyBatis.get(1);
             logger.info("Get one Doctor: " + returnedByBatis);
 
             //Insert
-            Doctor insertDoctor = new Doctor("DoctorBatis", "DoctorBatis", 100, 1, 1);
+            //Doctor Builder
+            DoctorBuilder builder = new DoctorBuilder();
+            Doctor insertDoctor = builder.buildFirstName("BuilderDoctor")
+                    .buildLastName("BuilderDoctorLast")
+                    .buildSalary(1000)
+                    .buildSpecId(1)
+                    .buildDepartmentId(2)
+                    .getDoctor();
+
+
             doctorMyBatis.insert(insertDoctor);
             logger.info("Insert one Doctor: " + insertDoctor);
 
@@ -100,7 +118,13 @@ public class Main {
             }
 
             //Update
-            Doctor updateDoctor = new Doctor(14, "Doctoooooar", "Doctooooar", 100000, 1, 1);
+            Doctor updateDoctor = builder.buildDoctorId(14)
+                    .buildFirstName("UPDBuilderDoctor")
+                    .buildLastName("UPDBuilderDoctorLast")
+                    .buildSalary(1000)
+                    .buildSpecId(1)
+                    .buildDepartmentId(2)
+                    .getDoctor();
             doctorMyBatis.update(updateDoctor);
             logger.info("Update one Doctor: " + updateDoctor);
 
@@ -108,9 +132,22 @@ public class Main {
             Doctor deleteadminP = new Doctor(5, "Batis3", "Batis32", 100000, 1, 1);
             doctorMyBatis.delete(deleteadminP);
             logger.info("Delete one Doctor: " + deleteadminP);*/
+
+
         } catch (IOException | SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void doctorMVCUsage() {
+        DoctorModel doctorModel = new DoctorModel();
+        DoctorView doctorView = new DoctorView();
+        DoctorController doctorController = new DoctorController(doctorView, doctorModel);
+
+        doctorController.updateView();
+        doctorController.setDoctorFirstLastName("MVCFirst", "MVCLast");
+        doctorController.setDoctorSalarySpecAndDept(1000, 1, 1);
+        doctorController.updateView();
     }
 
     public static void nurseUsage() {

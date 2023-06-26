@@ -31,3 +31,7 @@ Added AdminPMyBatisMapper and all method. Fixed service classes
 22.06
 Converted everything MyBatis. Added MyBatis to the Nurse and Doctor
 
+26.06
+Added MVC Pattern
+Builder Pattern
+and Factory Pattern
